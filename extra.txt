@@ -1,0 +1,668 @@
+---------------home comments--------------
+final DatabaseReference friend_table = FirebaseDatabase.getInstance().getReference("User_friends/"+firebaseAuth.getCurrentUser().getEmail().split("@")[0]);
+//                    friend_table.addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                            Long x = dataSnapshot.getChildrenCount();
+//                            int c = 0;
+//                            for(DataSnapshot ds : dataSnapshot.getChildren()){
+//                                c++;
+////                                Log.i("friend",ds.getValue(String.class));
+//
+//                                final DatabaseReference post_table = FirebaseDatabase.getInstance().getReference("User_posts/"+ds.getValue(String.class));
+//                                int finalC = c;
+//                                post_table.addValueEventListener(new ValueEventListener() {
+//                                    @Override
+//                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                                        for(DataSnapshot ds1: dataSnapshot.getChildren()){
+//                                            Post p = ds1.getValue(Post.class);
+////                                            String title = p.getTitle();
+////                                            String desc = p.getDescription();
+////                                            String photo = p.getPhoto();
+////                                            Long time = p.getTime();
+////                                            Log.i("friend",p.getTitle());
+////                                            Log.i("friend",p.getDescription());
+////                                            Log.i("friend",ds1.getValue(Post.class).toString());
+//                                            post_list.add(p);
+////                                            Log.i("size",Integer.toString(post_list.size()));
+//                                        }
+//                                        if(finalC == x){
+//                                            if(post_list.isEmpty()){
+//                                                progressBar.setVisibility(View.GONE);
+//                                                Toast.makeText(Home.this,"No posts",Toast.LENGTH_LONG).show();
+//                                            }else {
+////                                            Log.i("reach","1");
+//                                                Collections.sort(post_list, (p1, p2) -> Long.compare(p1.getTime(), p2.getTime()));
+//                                                Collections.reverse(post_list);
+//                                                customAdapter = new CustomAdapter_post(Home.this, R.layout.post_custom_adapter, post_list,"Home");
+//                                                Post_list_view.setAdapter(customAdapter);
+//                                                progressBar.setVisibility(View.GONE);
+//                                            }
+//                                        }
+////                                        Log.i("size",Integer.toString(post_list.size()));
+//                                        post_table.removeEventListener(this);
+//                                    }
+//
+//                                    @Override
+//                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                                    }
+//
+//                                });
+//
+//                            }
+//                            friend_table.removeEventListener(this);
+//
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                        }
+//                    });
+//                    Log.i("size",Integer.toString(post_list.size()));
+
+
+
+
+
+
+
+
+
+
+
+//        dialog = new Dialog(this);
+//
+//        progressBar = findViewById(R.id.progressBar);
+//        progressBar.setVisibility(View.VISIBLE);
+////        progressDialog = new ProgressDialog(this);
+////        progressDialog.setMessage("Processing...");
+////        progressDialog.show();
+//
+//        ref = FirebaseDatabase.getInstance().getReference("User_friends");
+//        t.start();
+//
+//        Post_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Post p1 = (Post)adapterView.getItemAtPosition(i);
+//                Intent i1 = new Intent(Home.this, post_comments.class);
+//                i1.putExtra("email",p1.getEmail());
+////                i1.putExtra("photo",p1.getPhoto());
+////                i1.putExtra("comments",p1.getComments());
+//                i1.putExtra("title",p1.getTitle());
+////                Log.i("time", Long.toString(p1.getTime()));
+//                i1.putExtra("time",Long.toString(p1.getTime()));
+//                i1.putExtra("description",p1.getDescription());
+//                finish();
+//                startActivity(i1);
+//            }
+//        });
+
+
+
+
+
+
+
+
+
+    //////////
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        FirebaseRecyclerAdapter<Post, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Post, BlogViewHolder>(Post.class, R.layout.custom_adapter_post_updated,BlogViewHolder.class, ref) {
+//            @Override
+//            protected void populateViewHolder(BlogViewHolder blogViewHolder, Post post, int i) {
+////                Log.i("post", post.getTitle());
+//                blogViewHolder.setTitle(post.getTitle());
+//                blogViewHolder.setDescription(post.getDescription());
+//                blogViewHolder.setPersonName(post.getEmail());
+//                blogViewHolder.setImage(post.getPhoto());
+//            }
+//
+//        };
+//
+//        recyclerView.setAdapter(firebaseRecyclerAdapter);
+//
+//    }
+//
+//    public static class BlogViewHolder extends RecyclerView.ViewHolder{
+//
+//        View mview;
+//
+//        public BlogViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//
+//            mview = itemView;
+//        }
+//
+//        public void setTitle(String s){
+//            TextView post_title = (TextView) mview.findViewById(R.id.post_title);
+//            post_title.setText(s);
+//        }
+//
+//        public void setDescription(String s){
+//            TextView post_desc = (TextView) mview.findViewById(R.id.post_description);
+//            post_desc.setText(s);
+//        }
+//
+//        public void setPersonName(String s){
+//            TextView post_person_name = (TextView) mview.findViewById(R.id.post_person_name);
+//            post_person_name.setText(s);
+//        }
+//
+//        public void setImage(String s){
+//            ImageView post_image = (ImageView) mview.findViewById(R.id.post_photo);
+//            Picasso.get().load(Uri.parse(s)).into(post_image);
+//        }
+//    }
+
+    ///////////
+
+
+
+
+
+
+
+
+//            ref.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                    if(!dataSnapshot.child(firebaseAuth.getCurrentUser().getEmail().split("@")[0]).exists()){
+//                        progressBar.setVisibility(View.GONE);
+//                        Toast.makeText(Home.this, "You have no friend yet!!",Toast.LENGTH_LONG).show();
+//                    }else{
+//                        final DatabaseReference friend_table = FirebaseDatabase.getInstance().getReference("User_friends/"+firebaseAuth.getCurrentUser().getEmail().split("@")[0]);
+//                        friend_table.addValueEventListener(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                                Long x = dataSnapshot.getChildrenCount();
+//                                int c = 0;
+//                                for(DataSnapshot ds : dataSnapshot.getChildren()){
+//                                    c++;
+////                                Log.i("friend",ds.getValue(String.class));
+//
+//                                    final DatabaseReference post_table = FirebaseDatabase.getInstance().getReference("User_posts/"+ds.getValue(String.class));
+//                                    int finalC = c;
+//                                    post_table.addValueEventListener(new ValueEventListener() {
+//                                        @Override
+//                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                                            for(DataSnapshot ds1: dataSnapshot.getChildren()){
+//                                                Post p = ds1.getValue(Post.class);
+////                                            String title = p.getTitle();
+////                                            String desc = p.getDescription();
+////                                            String photo = p.getPhoto();
+////                                            Long time = p.getTime();
+////                                            Log.i("friend",p.getTitle());
+////                                            Log.i("friend",p.getDescription());
+////                                            Log.i("friend",ds1.getValue(Post.class).toString());
+//                                                post_list.add(p);
+////                                            Log.i("size",Integer.toString(post_list.size()));
+//                                            }
+//                                            if(finalC == x){
+//                                                if(post_list.isEmpty()){
+//                                                    progressBar.setVisibility(View.GONE);
+//                                                    Toast.makeText(Home.this,"No posts",Toast.LENGTH_LONG).show();
+//                                                }else {
+////                                            Log.i("reach","1");
+//                                                    Collections.sort(post_list, (p1, p2) -> Long.compare(p1.getTime(), p2.getTime()));
+//                                                    Collections.reverse(post_list);
+//                                                    customAdapter = new CustomAdapter_post(Home.this, R.layout.post_custom_adapter, post_list,"Home");
+//                                                    Post_list_view.setAdapter(customAdapter);
+//                                                    progressBar.setVisibility(View.GONE);
+//                                                }
+//                                            }
+////                                        Log.i("size",Integer.toString(post_list.size()));
+//                                            post_table.removeEventListener(this);
+//                                        }
+//
+//                                        @Override
+//                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                                        }
+//
+//                                    });
+//
+//                                }
+//                                friend_table.removeEventListener(this);
+//
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                            }
+//                        });
+////                    Log.i("size",Integer.toString(post_list.size()));
+//
+//                    }
+//                    ref.removeEventListener(this);
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------post-comments-------------------------------
+
+//        db = FirebaseDatabase.getInstance().getReference("users");
+//        db.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                User u1 = dataSnapshot.child(email).getValue(User.class);
+//                Picasso.get().load(Uri.parse(u1.getPhoto())).into(Post_person_photo);
+//                Post_person_name.setText(u1.getName());
+//                db.removeEventListener(this);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+
+//        db = FirebaseDatabase.getInstance().getReference("User_posts/"+email+"/"+time);
+//        db.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Picasso.get().load(Uri.parse(dataSnapshot.child("photo").getValue(String.class))).into(Post_photo);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+        ///////////////////////////////////////////photo//////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                String s = firebaseAuth.getCurrentUser().getEmail().split("@")[0] + " : " + Comment_edittxt.getText().toString() + "\n";
+//                if(!comments.equals(""))
+//                    s = s + comments;
+//                comments = s;
+//                Post_comments.requestFocus();
+//                Post_comments.setText(s);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//user detail
+
+//                DatabaseReference db4 = FirebaseDatabase.getInstance().getReference("users");
+//                db4.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        u2[0] = dataSnapshot.child(name).getValue(User.class);
+////                                arrayList.add(new Comment(name,u1.getPhoto(),comment));
+////                            Log.i("reach",Integer.toString(arrayList.size()));
+//                        flag[0] = 1;
+//                        db4.removeEventListener(this);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+                /////////
+
+
+
+
+
+
+
+
+
+
+//        db = FirebaseDatabase.getInstance().getReference("users");
+//        db.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                User u1 = dataSnapshot.child(p).getValue(User.class);
+//                name.setText(u1.getName());
+//                if(!u1.getPhoto().equals(""))
+//                    Picasso.get().load(Uri.parse(u1.getPhoto())).into(image);
+//
+//                db.removeEventListener(this);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+
+
+
+
+
+
+
+
+
+---------------My-posts-------------
+
+
+//        My_post_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Post p1 = (Post)adapterView.getItemAtPosition(i);
+//                Intent i1 = new Intent(My_posts.this, post_comments.class);
+//                i1.putExtra("email",p1.getEmail());
+////                i1.putExtra("photo",p1.getPhoto());
+////                i1.putExtra("comments",p1.getComments());
+//                i1.putExtra("title",p1.getTitle());
+////                Log.i("time", Long.toString(p1.getTime()));
+//                i1.putExtra("time",Long.toString(p1.getTime()));
+//                i1.putExtra("description",p1.getDescription());
+//                finish();
+//                startActivity(i1);
+//            }
+//        });
+
+
+
+
+
+
+
+
+
+//    public void showPopUp(String p) {
+//
+//        dialog.setContentView(R.layout.custom_popup);
+//        Follow = (Button) dialog.findViewById(R.id.follow_btn);
+//        Follow.setVisibility(View.GONE);
+//        Follow.setEnabled(false);
+////        if(friend_list.contains(p))
+////            Follow.setText("Connected");
+//        close = (TextView) dialog.findViewById(R.id.close);
+//        name = (TextView) dialog.findViewById(R.id.Person_name);
+//        followers_count = (TextView) dialog.findViewById(R.id.followers_count);
+//        post_count = (TextView) dialog.findViewById(R.id.post_count);
+//        image = (ImageView) dialog.findViewById(R.id.profile_photo);
+//
+//        db = FirebaseDatabase.getInstance().getReference("User_friends/" + p);
+//        db.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+////                Toast.makeText(search_friend.this,Long.toString(dataSnapshot.getChildrenCount()),Toast.LENGTH_LONG).show();
+//                followers_count.setText(Long.toString(dataSnapshot.getChildrenCount()));
+//                db.removeEventListener(this);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//        db = FirebaseDatabase.getInstance().getReference("User_posts/"+p);
+//        db.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                post_count.setText(Long.toString(dataSnapshot.getChildrenCount()));
+//                db.removeEventListener(this);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        db = FirebaseDatabase.getInstance().getReference("users");
+//        db.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                User u1 = dataSnapshot.child(p).getValue(User.class);
+//                name.setText(u1.getName());
+//                if(!u1.getPhoto().equals(""))
+//                    Picasso.get().load(Uri.parse(u1.getPhoto())).into(image);
+//
+//                db.removeEventListener(this);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        close.setOnClickListener(this);
+//        dialog.show();
+//
+//    }
+
+
+
+
+
+
+----------------------custom-adapter-post----------------------
+
+//                DatabaseReference db = FirebaseDatabase.getInstance().getReference("users/"+post_list.get(position).getEmail());
+//                db.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        i.putExtra("person_photo",dataSnapshot.child("photo").getValue(String.class));
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+
+
+
+
+
+
+
+
+
+
+
+
+//    private Context context;
+//    private String l;
+//    public CustomAdapter_post(@NonNull Context context, int resource, @NonNull ArrayList<Post> objects,String location) {
+//        super(context, resource, objects);
+//        this.context = context;
+//        this.l = location;
+//    }
+//
+//    @NonNull
+//    @Override
+//    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//
+//        LayoutInflater inflater = LayoutInflater.from(getContext());
+//        View customView = inflater.inflate(R.layout.post_custom_adapter, parent,false);
+//
+////        ImageView pic = (ImageView) customView.findViewById(R.id.post_photo);
+//        TextView title_txt = (TextView) customView.findViewById(R.id.post_title);
+//        TextView desc_txt = (TextView) customView.findViewById(R.id.post_description);
+//        ImageView Post_person_photo = (ImageView) customView.findViewById(R.id.post_person_photo);
+//        TextView Post_person_name = (TextView) customView.findViewById(R.id.post_person_name);
+//
+//        String title = getItem(position).getTitle();
+//        String description = getItem(position).getDescription();
+////        String photo = getItem(position).getPhoto();
+//        String person_name = getItem(position).getEmail();
+//
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+//        ref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                User u1 = dataSnapshot.child(person_name).getValue(User.class);
+//                Post_person_name.setText(u1.getName());
+//                Picasso.get().load(Uri.parse(u1.getPhoto())).into(Post_person_photo);
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+////        Post_person_photo.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View view) {
+////                if(l.equals("Home"))
+////                    ((Home)context).showPopUp(person_name);
+////                else if(l.equals("My_posts"))
+////                    ((My_posts)context).showPopUp(person_name);
+////            }
+////        });
+//
+////        Log.i("custom",title);
+////        Log.i("custom",photo);
+////        Log.i("custom",description);
+//
+////        Picasso.get().load(Uri.parse(photo)).into(pic);
+//        title_txt.setText(title);
+//        desc_txt.setText(description);
+//
+//        return customView;
+//    }
+
+
+
+
+
+
+
+
+------------------------custom-adapter-friend--------------------
+
+//    @NonNull
+//    @Override
+//    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//
+//        View row;
+//        ViewHolder viewHolder;
+//        row = convertView;
+//        if(row == null) {
+//            row = LayoutInflater.from(getContext()).inflate(R.layout.custom_adapter_friend,parent,false);
+//            viewHolder = new ViewHolder();
+//            viewHolder.image = row.findViewById(R.id.person_photo);
+//            viewHolder.name = row.findViewById(R.id.person_name);
+//            row.setTag(viewHolder);
+//        }else {
+//            viewHolder = (ViewHolder) row.getTag();
+//        }
+//        Picasso.get().load(Uri.parse(map.get(person_list.get(position)).getPhoto())).into(viewHolder.image);
+//        viewHolder.name.setText(map.get(person_list.get(position)).getName());
+//
+//        return row;
+//    }
+
+    //
+//
+
+
+
+
+
+
+
+
+
+
+//        follow_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                firebaseAuth = FirebaseAuth.getInstance();
+//                DatabaseReference db = FirebaseDatabase.getInstance().getReference("User_friends/" + firebaseAuth.getCurrentUser().getEmail().split("@")[0]);
+//                if(follow_btn.getText().toString().equals("Follow")) {
+//                    db.child(name).setValue(name);
+////                    follow_btn.setText("Connected");
+//                    friend_list.add(name);
+//                    CustomAdapter_friend.this.notifyDataSetChanged();
+//                }else{
+//                    db.child(name).removeValue();
+////                    follow_btn.setText("Follow");
+//                    friend_list.remove(name);
+//                    CustomAdapter_friend.this.notifyDataSetChanged();
+//                }
+//            }
+//        });
+
+
+
+
+
+
+
+
+
+
+//    public void update(ArrayList<String> v){
+//
+//        person_list = new ArrayList<>();
+//        person_list.addAll(v);
+//        notifyDataSetChanged();
+//
+//    }
+
+//    public void updateFriendsList(ArrayList<String> newlist) {
+//        friend_list.clear();
+//        friend_list.addAll(newlist);
+//        this.notifyDataSetChanged();
+//    }
+

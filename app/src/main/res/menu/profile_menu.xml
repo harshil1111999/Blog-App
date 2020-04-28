@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/my_posts"
+        android:icon="@drawable/ic_collections"
+        android:title="My Posts"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/me_following"
+        android:icon="@drawable/ic_person"
+        android:title="Me Following"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout"
+        app:showAsAction="never"/>
+
+</menu>

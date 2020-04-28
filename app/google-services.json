@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1095707464799",
+    "firebase_url": "https://blog-e4ccf.firebaseio.com",
+    "project_id": "blog-e4ccf",
+    "storage_bucket": "blog-e4ccf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095707464799:android:6285b1f110536f00ee77ea",
+        "android_client_info": {
+          "package_name": "com.example.blog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095707464799-m21cs5s8ks17hbvphsg4hkgr9e77b4oo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blog",
+            "certificate_hash": "49c1487c50a3343f042668dbb04910993509b4f3"
+          }
+        },
+        {
+          "client_id": "1095707464799-sni6aur383a1j44trpeosovhphg9cimu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4lOqrncrp6fAKPamjgXtXlH_frEBlZoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095707464799-sni6aur383a1j44trpeosovhphg9cimu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

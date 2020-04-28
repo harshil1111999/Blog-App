@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:layout_margin="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/post_linear_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/post_person_photo"
+                android:src="@drawable/ic_person"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:background="@drawable/circle_border"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/post_person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="Name"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/post_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/post_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textColor="@color/white"
+                android:inputType="textCapWords"/>
+
+            <TextView
+                android:id="@+id/post_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="@color/white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textStyle="italic"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

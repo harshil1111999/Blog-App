@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/Me"
+        android:icon="@drawable/ic_person"
+        android:title="User"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/addPost"
+        android:icon="@drawable/ic_add"
+        android:title="Add New Post"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="Search friend"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout"
+        app:showAsAction="never"/>
+
+</menu>
